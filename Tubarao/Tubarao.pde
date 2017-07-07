@@ -4,6 +4,8 @@ PShape lula1,lula2;
 PImage fundo;
 
 int posTubarao = 10;
+int estadoAtum = 0;
+int estadoLula = 0;
 float xAtum;
 float yAtum;
 float xLula;
@@ -25,7 +27,7 @@ void setup() {
   yAtum = random(10.0,height-50.0);
   xLula = width-80;
   yLula = random(10.0,height-50.0);
-} 
+}
 int dPos = 2;
 int qualAtum = 1;
 int qualLula = 1;
@@ -54,14 +56,20 @@ void draw(){
   } else if (qualLula ==2){
     xLula = xLula - 2.2*dPos;
   }
-  if((frameCount/20)%2==1)
+  estadoAtum = estadoAtum +1;
+  if(estadoAtum<20)
     qualAtum = 1;
-  else
+  else if(estadoAtum<40)
     qualAtum = 2;
-  if((frameCount/40)%2==1)
-    qualLula = 1;
   else
+    estadoAtum = 0;
+  estadoLula = estadoLula +1;
+  if(estadoLula<40)
+    qualLula = 1;
+  else if(estadoLula<80)
     qualLula = 2;
+  else
+    estadoLula = 0;
   if(keyPressed){
     if (key == CODED) {
       if (keyCode == DOWN) {

@@ -48,7 +48,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -58,7 +58,8 @@
      id="layer1"
      transform="translate(433.1395,-80.971887)">
     <g
-       id="g4798">
+       id="g4798"
+       transform="matrix(-1,0,0,1,-512.17749,0)">
       <path
          sodipodi:nodetypes="cssssscc"
          inkscape:connector-curvature="0"

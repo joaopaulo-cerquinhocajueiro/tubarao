@@ -119,14 +119,28 @@ void draw(){
   if(keyPressed){
     if (key == CODED) {
       if (keyCode == DOWN) {
-        if(posTubarao<height-130-10){
-          posTubarao = posTubarao + dPos;
-        }
+        paraBaixo();
       } else if (keyCode == UP) {
-        if(posTubarao>10){
-          posTubarao = posTubarao - dPos;
-        }
+        paraCima();
       }
     }
+  }
+  if(mousePressed==true && mouseX<270){
+    if (mouseY<height/2){
+      paraCima();
+    } else {
+      paraBaixo();
+    }
+  }
+}
+
+void paraBaixo(){
+  if(posTubarao<height-130-10){
+    posTubarao = posTubarao + dPos;
+  }
+}
+void paraCima() {
+  if(posTubarao>10){
+    posTubarao = posTubarao - dPos;
   }
 }

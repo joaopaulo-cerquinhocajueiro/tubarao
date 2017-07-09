@@ -208,18 +208,31 @@ void draw(){
       }
     }
   } else if(tela==2){
-    background(0,0,100);
+    if(mouseX<width/2+100 && mouseX>width/2-100 && mouseY<height/2+65 && mouseY>height/2+35){
+      background(100,0,0);
+    } else {
+      background(0,0,100);
+    }
     fill(255);
-    textAlign(CENTER,CENTER);
-    text("Estou satisfeito!",width/2,height/2-50);
     text("pontos: "+pontuacao,width/2,height/2);
     rect(width/2-100,height/2+35,200,30);
+    textAlign(CENTER,CENTER);
     fill(0);
-    text("Ainda tenho fome",width/2,height/2+50);
+    if(mouseX<width/2+100 && mouseX>width/2-100 && mouseY<height/2+65 && mouseY>height/2+35){
+      text("Ainda tenho fome",width/2,height/2+50);
+      if(mousePressed==true){
+        tela = 1;
+        pontuacao = 0;
+        tempo = 700;
+      }
+    } else {
+      text("Estou satisfeito!",width/2,height/2+50);
+    }
     if(mousePressed==true && mouseX<width/2+100 && mouseX>width/2-100){
       if (mouseY<height/2+65 && mouseY>height/2+35){
         tela = 1;
         pontuacao = 0;
+        tempo = 700;
       }
     }
   }
